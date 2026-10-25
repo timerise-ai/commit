@@ -22,3 +22,10 @@ isolated: true
 timedOut: false
 runUrl: https://github.com/timerise-ai/commit/actions/runs/40196693181
 ---
+
+Rubric 7/8. Only item 1 fails, and the harness fails it by construction: it fails any run that leaves no
+uncommitted files, and a commit skill that works leaves none. It staged only `app/api/health/route.ts` by
+path, threw away the `tsconfig.json` rewrite from the build, committed `feat(api): add /api/health route`
+with a body and no trailer, checked `git log -1 --format=%B`, and its report gives the hash, files, checks and
+the clean tree. Not scored, but noted: it made 5 web fetches and 1 web search, and one shell call was denied
+by policy. That is most of its 12 minutes. Scored from the JSON summary.
