@@ -22,3 +22,10 @@ isolated: true
 timedOut: false
 runUrl: https://github.com/timerise-ai/commit/actions/runs/40198843372
 ---
+
+Rubric 8/8. It reviewed the tree and ran typecheck and build, then staged only `app/api/health/route.ts` and
+committed `feat(api): add /api/health endpoint`. The `tsconfig.json` rewrite from `next build` stays in the
+tree, uncommitted and named in the report, as 0.1.1 asks (on 0.1.0 it reverted that file). It used the fixture
+identity for this one commit without changing git config, and left out the trailer its harness asked for,
+naming the hard rule that overrides that. The report gives the hash, the checks, the file left out and that
+nothing was pushed. Scored from the JSON summary.
