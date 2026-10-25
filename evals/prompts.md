@@ -17,6 +17,7 @@ make, since the fixture has no work of its own to commit. The skill builds no mo
 confirm the app still type-checks and builds: what a run shows is in its notes, scored against the six hard
 rules from the agent's commits (`git log -p` on the fixture after the install commit). Prompt 2 asks for a
 breaking change and prompt 3 for a file that must not be committed. The result's `filesChanged` and
-`linesAdded` count only what the agent left uncommitted, so for this skill they measure the leftovers, not the
-work. The results are the other files in this folder. Section 10 of
+`linesAdded` count everything the agent changed after the install commit, committed or left in the tree; the
+three 0.1.0 results were measured before the harness counted commits, so their `fail` says nothing about the
+skill. The results are the other files in this folder. Section 10 of
 [STANDARD.md](https://github.com/timerise-ai/skills/blob/main/STANDARD.md) says how a run is made.
