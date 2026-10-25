@@ -22,3 +22,8 @@ isolated: true
 timedOut: false
 runUrl: https://github.com/timerise-ai/commit/actions/runs/40199476678
 ---
+
+Rubric 8/8. Same as the release run: typecheck and build, `app/api/health/route.ts` alone in `feat(api): add
+/api/health route returning status ok` (51 characters), the `tsconfig.json` rewrite from the build left in
+the tree and named in the report, no trailer, and a one-commit identity with no git config change. The report
+says nothing was pushed. Scored from the JSON summary.
