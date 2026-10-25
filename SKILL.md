@@ -117,7 +117,8 @@ vocabulary and its documented commit conventions, read and never rewritten:
 
 1. Review the tree, untracked files included, and read the recent log for the
    repository's scopes: [staging.md](references/staging.md).
-2. Run the repository's own check if it has one and report the result:
+2. Run the repository's own check if it has one and report the result; a file
+   only the check rewrote is left unstaged and named in the report:
    [validation.md](references/validation.md).
 3. Group the changes, stage each group by path, and flag what must not be
    committed: [staging.md](references/staging.md).

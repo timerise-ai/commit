@@ -31,6 +31,11 @@ A repository whose `CLAUDE.md` or README names a different check, or a faster on
 - **The check runs on the working tree, not on the staged set.** If unstaged changes remain after the groups
   are formed, a pass covers code that is not in the commit. Say so in the report rather than claiming the
   commit passed.
+- **A file the check rewrote is not part of the change.** A build or a formatter can rewrite files the work
+  never touched: `next build` adds `.next/dev/types/**/*.ts` to `tsconfig.json`, a formatter reflows a file
+  nobody edited. Compare `git status` before and after the check. Such a file is not staged in any group and
+  not reverted; leave it in the tree and name it in the report as rewritten by the check. A file the work
+  changed and the check also touched belongs to the work's group as usual.
 - **A failure is reported, not hidden.** Show the failing command and the relevant lines of its output, then
   ask whether to commit anyway. A WIP commit of a failing build is legitimate when the user chooses it; say
   so in the body (`Build fails: <reason>.`).

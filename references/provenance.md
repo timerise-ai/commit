@@ -4,7 +4,7 @@ The engineering ledger for this skill, for the person editing it. The earlier im
 single-file version of this skill that preceded 0.1.0: one `SKILL.md` with the process, the message format
 and the attribution rule, used to write the history every Timerise skill is released from. The 0.1.0 audit
 read it against git's documented behaviour and against `bumpv`, which reads what it writes. This ledger has
-fourteen entries.
+fifteen entries.
 
 ## Changed by the audit
 
@@ -56,3 +56,8 @@ Designed in this skill and never run before 0.1.0:
     rule that a stricter host convention is followed and one that breaks a non-negotiable is reported
     ([adaptation.md](adaptation.md)); the repository-state table and the end-of-run report in
     [committing.md](committing.md); and the agent evals in `evals/`.
+15. **A file only the check rewrote is left unstaged and reported** ([validation.md](validation.md)), found by
+    the 0.1.0 agent evals: `next build` rewrote `tsconfig.json` during the check, and one of three agents
+    staged it inside the feature commit, whose message did not mention it. The other two reverted it. The
+    rewrite is reproduced in every eval log of that release; leaving it in the tree is neither run nor
+    verified before 0.1.1.
